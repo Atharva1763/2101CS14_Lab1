@@ -1,9 +1,11 @@
 #include <stdio.h>
+#include<math.h>
 
 void addition( double a , double b );
 void substract( double a , double b );
 void multiplication( double a, double b);
 void division( double a , double b );
+void modulo(double a,double b);
 
 int main()
 {
@@ -15,6 +17,7 @@ int main()
         printf("2 : Substract\n");
         printf("3 : Multiplication\n");
         printf("4 : Division\n");
+        printf("5 : Modulo\n");
 
         int Operation;
         printf("Operation Number : ");
@@ -47,6 +50,8 @@ int main()
             case 4:
                 division(num1,num2);
                 break;
+            case 5:
+                modulo(num1,num2);
         }
     }
     return 0;
@@ -92,6 +97,23 @@ void division( double a , double b )
             break;
         default:
             printf("%lf / %lf = %lf\n\n\n",b,a,b/a);
+            break;
+    }
+}
+
+void modulo( double a,double b )
+{
+    printf("\nEnter 1 for Number1 modulo(Number 2) : \nEnter 2 for Number2 modulo(Number1) :\n");
+    int op; 
+    scanf("%d",&op);
+
+    switch(op)
+    {
+        case 1:
+            printf("%lf modulo %lf = %lf\n\n\n",a,b,remainder(a,b));
+            break;
+        default:
+            printf("%lf modulo %lf = %lf\n\n\n",b,a,remainder(b,a));
             break;
     }
 }
