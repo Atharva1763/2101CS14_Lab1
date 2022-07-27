@@ -22,7 +22,11 @@ int main()
         int Operation;
         printf("Operation Number : ");
         scanf("%d",&Operation);
-
+        if(Operation > 5)
+        {
+            printf("\nWrong operation command.Please try again\n");
+            continue;
+        }
         if(Operation == 0)
         {
             break;
@@ -52,6 +56,7 @@ int main()
                 break;
             case 5:
                 modulo(num1,num2);
+                break;
         }
     }
     return 0;
@@ -73,8 +78,12 @@ void substract( double a , double b )
         case 1:
             printf("%lf - %lf = %lf\n\n\n",a,b,a-b);
             break;
-        default:
+        case 2:
             printf("%lf - %lf = %lf\n\n\n",b,a,b-a);
+            break;
+        default:
+            printf("\nWrong command, please try again\n");
+            substract(a,b);
             break;
     }
 }
@@ -95,8 +104,12 @@ void division( double a , double b )
         case 1:
             printf("%lf / %lf = %lf\n\n\n",a,b,a/b);
             break;
-        default:
+        case 2:
             printf("%lf / %lf = %lf\n\n\n",b,a,b/a);
+            break;
+        default:
+            printf("\nWrong command, please try again\n");
+            division(a,b);
             break;
     }
 }
@@ -112,8 +125,12 @@ void modulo( double a,double b )
         case 1:
             printf("%lf modulo %lf = %lf\n\n\n",a,b,remainder(a,b));
             break;
-        default:
+        case 2:
             printf("%lf modulo %lf = %lf\n\n\n",b,a,remainder(b,a));
+            break;
+        default:
+            printf("\nWrong command, please try again\n");
+            modulo(a,b);
             break;
     }
 }
