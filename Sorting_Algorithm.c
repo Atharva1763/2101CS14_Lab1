@@ -1,13 +1,17 @@
 #include <stdio.h>
 
-//--------------Quick Sort-----------------//
 void swap(int *a, int *b);
+
+//--------------Quick Sort-----------------//
 int partition(int array[], int lo, int hi);
 void quickSort(int array[], int lo, int hi);
 
 //--------------Merge Sort-----------------//
 void merge(int arr[], int l, int m, int r);
 void mergeSort(int arr[], int l, int r);
+
+//--------------Bubble Sort-----------------//
+void bubbleSort(int arr[], int n);
 
 int main()
 {
@@ -26,6 +30,7 @@ int main()
     printf("\nEnter the number corresponding to the opperation that you want to perform\n");
     printf("Enter 1: Quick Sort\n");
     printf("Enter 2: Merge Sort\n");
+    printf("Enter 3: Bubble Sort\n");
 
     int operation;
     scanf( "%d" , &operation );
@@ -38,6 +43,8 @@ int main()
         case 2:
             mergeSort(arr, 0, n - 1);
             break;
+        case 3:
+            bubbleSort(arr, n);
     }
     
     printf("Sorted array in ascending order: \n");
@@ -166,5 +173,20 @@ void mergeSort(int arr[], int l, int r)
 
 		merge(arr, l, m, r);
 	}
+}
+
+//-----------------------------------------//
+//--------------Bubble Sort-----------------//
+//-----------------------------------------//
+
+void bubbleSort(int arr[], int n)
+{
+    int i, j;
+    for (i = 0; i < n - 1; i++)
+  
+        // Last i elements are already in place
+        for (j = 0; j < n - i - 1; j++)
+            if (arr[j] > arr[j + 1])
+                swap(&arr[j], &arr[j + 1]);
 }
 
