@@ -16,7 +16,8 @@ void bubbleSort(int arr[], int n);
 //--------------Selection Sort-----------------//
 void selectionsort(int array[], int n);
 
-
+//--------------Insertion Sort-----------------//
+void insertionsort(int arr[], int n);
 
 int main()
 {
@@ -37,6 +38,7 @@ int main()
     printf("Enter 2: Merge Sort\n");
     printf("Enter 3: Bubble Sort\n");
     printf("Enter 4: Selection Sort\n");
+    printf("Enter 5: Insertion Sort\n");
 
     int operation;
     scanf( "%d" , &operation );
@@ -50,10 +52,13 @@ int main()
             mergeSort(arr, 0, n - 1);
             break;
         case 3:
-            bubbleSort(arr, n);
+            bubbleSort(arr,n);
             break;
         case 4:
             selectionsort(arr,n);
+            break;
+        case 5:
+            insertionsort(arr,n);
             break;
     }
     
@@ -216,4 +221,24 @@ void selectionsort(int array[], int n){
     // put min at the correct position
     swap(&array[index_of_min], &array[i]);
   }
+}
+
+
+//---------------------------------------------//
+//--------------Insertion Sort-----------------//
+//---------------------------------------------//
+
+void insertionsort(int arr[], int n)
+{
+    int i, key, j;
+    for (i = 1; i < n; i++) {
+        key = arr[i];
+        j = i - 1;
+
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
 }
