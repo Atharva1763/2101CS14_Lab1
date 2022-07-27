@@ -2,6 +2,7 @@
 
 void addition( double a , double b );
 void substract( double a , double b );
+void multiplication( double a, double b);
 
 int main()
 {
@@ -12,6 +13,7 @@ int main()
         printf("0 : Exit \n");
         printf("1 : Add  \n");
         printf("2 : Substract\n");
+        printf("3 : Multiplication\n");
 
         int Operation;
         printf("Operation Number : ");
@@ -39,6 +41,9 @@ int main()
             case 2:
                 substract(num1,num2);
                 break;
+            case 3:
+                multiplication(num1,num2);
+                break;
         }
     }
     return 0;
@@ -64,4 +69,9 @@ void substract( double a , double b )
             printf("%lf - %lf = %lf\n\n\n",b,a,b-a);
             break;
     }
+}
+
+void multiplication( double a , double b )
+{
+    printf("\n%lf * %lf = %lf\n\n\n", a, b ,a*b );
 }
