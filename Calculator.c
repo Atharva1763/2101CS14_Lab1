@@ -22,12 +22,12 @@ int main()
         int Operation;
         printf("Operation Number : ");
         scanf("%d",&Operation);
-        if(Operation > 5)
+        if(Operation > 5)                               //If Operation > 5 then it is an invalid command
         {
             printf("\nWrong operation command.Please try again\n");
             continue;
         }
-        if(Operation == 0)
+        if(Operation == 0)                              //To terminate the program
         {
             break;
         }
@@ -62,12 +62,12 @@ int main()
     return 0;
 }
 
-void addition( double a , double b )
+void addition( double a , double b )                   //Function made for addition 
 {
     printf("\n%lf + %lf = %lf\n\n\n" ,a,b,a+b );
 }
 
-void substract( double a , double b )
+void substract( double a , double b )                    //Function made for substraction
 {
     printf("\nEnter 1 for Number1 - Number2 \nEnter 2 for Number2 - Number1\n");
     int op; 
@@ -88,12 +88,12 @@ void substract( double a , double b )
     }
 }
 
-void multiplication( double a , double b )
+void multiplication( double a , double b )                  //Function made for multiplication
 {
     printf("\n%lf * %lf = %lf\n\n\n", a, b ,a*b );
 }
 
-void division( double a , double b )
+void division( double a , double b )                          //Function made for division
 {
     printf("\nEnter 1 for Number1/Number2 \nEnter 2 for Number2/Number1\n");
     int op; 
@@ -114,7 +114,7 @@ void division( double a , double b )
     }
 }
 
-void modulo( double a,double b )
+void modulo( double a,double b )                                //Function made for modulo
 {
     printf("\nEnter 1 for Number1 modulo(Number 2) : \nEnter 2 for Number2 modulo(Number1) :\n");
     int op; 
