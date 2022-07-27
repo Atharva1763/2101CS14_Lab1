@@ -7,15 +7,20 @@ int main()
 {
     while(1)
     {
-        
 
         printf("\nEnter the number corresponding to the opperation that you want to perform\n");
+        printf("0 : Exit \n");
         printf("1 : Add  \n");
         printf("2 : Substract\n");
 
         int Operation;
         printf("Operation Number : ");
         scanf("%d",&Operation);
+
+        if(Operation == 0)
+        {
+            break;
+        }
         
         double num1 , num2 ; 
         printf("Enter the 2 operands\n");
@@ -24,6 +29,7 @@ int main()
         scanf("%lf",&num1);
         printf("Enter number 2: ");
         scanf("%lf",&num2);
+        
 
         switch(Operation)
         {
@@ -35,6 +41,7 @@ int main()
                 break;
         }
     }
+    return 0;
 }
 
 void addition( double a , double b )
@@ -54,7 +61,7 @@ void substract( double a , double b )
             printf("%lf - %lf = %lf\n\n\n",a,b,a-b);
             break;
         default:
-            printf("%lf - %lf = %lf\n\n\n",a,b,b-a);
+            printf("%lf - %lf = %lf\n\n\n",b,a,b-a);
             break;
     }
 }
